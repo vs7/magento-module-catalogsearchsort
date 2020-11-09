@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <VS7_CatalogSearchSort>
+            <version>0.1.0</version>
+        </VS7_CatalogSearchSort>
+    </modules>
+    <global>
+        <models>
+            <vs7_catalogsearchsort>
+                <class>VS7_CatalogSearchSort_Model</class>
+            </vs7_catalogsearchsort>
+        </models>
+        <helpers>
+            <vs7_catalogsearchsort>
+                <class>VS7_CatalogSearchSort_Helper</class>
+            </vs7_catalogsearchsort>
+        </helpers>
+    </global>
+    <frontend>
+        <events>
+            <catalog_product_collection_load_before>
+                <observers>
+                    <vs7_catalogsearchsort_sort_by_stock>
+                        <class>VS7_CatalogSearchSort_Model_Observer</class>
+                        <method>sortByStock</method>
+                    </vs7_catalogsearchsort_sort_by_stock>
+                </observers>
+            </catalog_product_collection_load_before>
+        </events>
+    </frontend>
+</config>
